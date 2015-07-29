@@ -1052,6 +1052,10 @@ NSString* const SocketIOException = @"SocketIOException";
                                             code:SocketIOTransportsNotSupported
                                         userInfo:nil];
             }
+        } else {
+            error = [NSError errorWithDomain:SocketIOError
+                                        code:SocketIOServerRespondedWithInvalidConnectionData
+                                    userInfo:json];
         }
     }
     
